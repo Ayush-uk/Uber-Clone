@@ -2,7 +2,8 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
-import userRoutes from "./routers/user.router.js"; 
+import userRoutes from "./routers/user.routes.js"; 
+import captainRoutes from "./routers/captain.routes.js";
 
 import connectDb from "./config/db.config.js";
 
@@ -21,5 +22,6 @@ app.get("/" , (req,res)=>{
 })
 
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/captains", captainRoutes);
 
 export default app;
